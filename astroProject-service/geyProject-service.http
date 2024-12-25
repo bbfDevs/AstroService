@@ -1,0 +1,6 @@
+@astroProject_service_HostAddress = http://localhost:5248
+
+GET {{astroProject_service_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
