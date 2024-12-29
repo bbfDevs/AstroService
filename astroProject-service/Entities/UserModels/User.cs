@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace astroProject_service.Entities.UserModels
 {
-    public class User
+    public class User : RecordInfo
     {
         [Key]
         public Guid Id { get; set; }
