@@ -1,4 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using astroProject_service.Entities.EnumModels;
+using astroProject_service.Entities.UserModels;
+using astroProject_service.Enums;
+using Microsoft.EntityFrameworkCore;
 
 namespace astroProject_service.Entities
 {
@@ -17,7 +20,12 @@ namespace astroProject_service.Entities
 
         public DbSet<ZodiacSignStream> ZodiacSignStream { get; set; }
         public DbSet<TarotCard> TarotCard { get; set; }
-    
+        public DbSet<User> User { get; set; }
+        public DbSet<Profile> Profile { get; set; }
+        public DbSet<MembershipEntity> Membership { get; set; }
+        public DbSet<RelationshipEntity> Relationship { get; set; }
+        public DbSet<ZodiacEntity> Zodiac { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
 
@@ -31,6 +39,10 @@ namespace astroProject_service.Entities
             {
                 relationship.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            modelBuilder.Entity<MembershipEntity>().ReflectToDatabase<MembershipTypeEnum, MembershipEntity>();
+            modelBuilder.Entity<RelationshipEntity>().ReflectToDatabase<RelationshipTypeEnum, RelationshipEntity>();
+            modelBuilder.Entity<ZodiacEntity>().ReflectToDatabase<ZodiacEnum, ZodiacEntity>();
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

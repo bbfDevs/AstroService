@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using astroProject_service.Entities;
@@ -11,9 +12,11 @@ using astroProject_service.Entities;
 namespace astroProject_service.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241229184118_User-and-Enums-are-Added")]
+    partial class UserandEnumsareAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -97,85 +100,6 @@ namespace astroProject_service.Migrations
                         {
                             Id = 6,
                             Description = "Engaged"
-                        });
-                });
-
-            modelBuilder.Entity("astroProject_service.Entities.EnumModels.ZodiacEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("Description")
-                        .IsRequired()
-                        .HasColumnType("VARCHAR(250)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Zodiac");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Description = "Aries"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Description = "Taurus"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Description = "Gemini"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Description = "Cancer"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Description = "Leo"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            Description = "Virgo"
-                        },
-                        new
-                        {
-                            Id = 7,
-                            Description = "Libra"
-                        },
-                        new
-                        {
-                            Id = 8,
-                            Description = "Scorpio"
-                        },
-                        new
-                        {
-                            Id = 9,
-                            Description = "Sagittarius"
-                        },
-                        new
-                        {
-                            Id = 10,
-                            Description = "Capricorn"
-                        },
-                        new
-                        {
-                            Id = 11,
-                            Description = "Aquarius"
-                        },
-                        new
-                        {
-                            Id = 12,
-                            Description = "Pisces"
                         });
                 });
 

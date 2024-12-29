@@ -5,7 +5,7 @@ using iks_endeks_service.Services;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
 using System.Text.Json.Serialization;
- 
+
 var builder = WebApplication.CreateBuilder(args);
 AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
 
@@ -19,6 +19,7 @@ builder.Services.AddScoped<TarotService>();
 builder.Services.AddScoped<VisualizationService>();
 builder.Services.AddScoped<TextGeneratorService>();
 builder.Services.AddScoped<ZodiacService>();
+builder.Services.AddScoped<EnumService>();
 builder.Services.AddHostedService<ZodiacStreamService>();
 builder.Services.AddHostedService<DataGeneratorService>();
 
