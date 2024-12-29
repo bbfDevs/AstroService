@@ -19,12 +19,13 @@ namespace astroProject_service.Entities
 
 
         public DbSet<ZodiacSignStream> ZodiacSignStream { get; set; }
-        public DbSet<TarotCard> TarotCard { get; set; }
         public DbSet<User> User { get; set; }
         public DbSet<Profile> Profile { get; set; }
         public DbSet<MembershipEntity> Membership { get; set; }
         public DbSet<RelationshipEntity> Relationship { get; set; }
         public DbSet<ZodiacEntity> Zodiac { get; set; }
+        public DbSet<LifeAspectEntity> LifeAspect { get; set; }
+        public DbSet<TarotCardEntity> TarotCard { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -43,6 +44,8 @@ namespace astroProject_service.Entities
             modelBuilder.Entity<MembershipEntity>().ReflectToDatabase<MembershipTypeEnum, MembershipEntity>();
             modelBuilder.Entity<RelationshipEntity>().ReflectToDatabase<RelationshipTypeEnum, RelationshipEntity>();
             modelBuilder.Entity<ZodiacEntity>().ReflectToDatabase<ZodiacEnum, ZodiacEntity>();
+            modelBuilder.Entity<LifeAspectEntity>().ReflectToDatabase<LifeAspectEnum, LifeAspectEntity>();
+            modelBuilder.Entity<TarotCardEntity>().ReflectToDatabase<TarotCardEnum, TarotCardEntity>();
         }
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)

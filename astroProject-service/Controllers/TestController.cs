@@ -21,13 +21,5 @@ namespace astroProject_service.Controllers
             this.zodiacService = zodiacService;
             this.tarotService = tarotService;
         }
-
-
-        [HttpGet]
-        public async Task<ActionResult<bool>> Test()
-        {
-            var result = await tarotService.CreateTarotCardsAsync();
-            return Ok(result);
-        }
     }
 }

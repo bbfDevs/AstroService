@@ -1,11 +1,11 @@
 ﻿using Azure.Core;
 using astroProject_service.Entities;
 using astroProject_service.Models.RequestModels;
-using astroProject_service.Utils.Enums;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Reflection;
 using System.Text;
+using astroProject_service.Enums;
 
 namespace astroProject_service.Services
 {
@@ -62,9 +62,9 @@ namespace astroProject_service.Services
                     return true;
                 }
                 var result = new List<ZodiacSignStream>();
-                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacSignEnum)).Cast<ZodiacSignEnum>())
+                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacEnum)).Cast<ZodiacEnum>())
                 {
-                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectsEnum)).Cast<LifeAspectsEnum>())
+                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectEnum)).Cast<LifeAspectEnum>())
                     {
                         var zodiacSignData = new ZodiacSignStream
                         {
@@ -112,9 +112,9 @@ namespace astroProject_service.Services
                     return true;
                 }
                 var result = new List<ZodiacSignStream>();
-                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacSignEnum)).Cast<ZodiacSignEnum>())
+                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacEnum)).Cast<ZodiacEnum>())
                 {
-                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectsEnum)).Cast<LifeAspectsEnum>())
+                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectEnum)).Cast<LifeAspectEnum>())
                     {
                         var zodiacSignData = new ZodiacSignStream
                         {
@@ -157,9 +157,9 @@ namespace astroProject_service.Services
                     return true;
                 }
                 var result = new List<ZodiacSignStream>();
-                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacSignEnum)).Cast<ZodiacSignEnum>())
+                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacEnum)).Cast<ZodiacEnum>())
                 {
-                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectsEnum)).Cast<LifeAspectsEnum>())
+                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectEnum)).Cast<LifeAspectEnum>())
                     {
                         var zodiacSignData = new ZodiacSignStream
                         {
@@ -202,9 +202,9 @@ namespace astroProject_service.Services
                     return true;
                 }
                 var result = new List<ZodiacSignStream>();
-                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacSignEnum)).Cast<ZodiacSignEnum>())
+                foreach (var zodiacSign in Enum.GetValues(typeof(ZodiacEnum)).Cast<ZodiacEnum>())
                 {
-                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectsEnum)).Cast<LifeAspectsEnum>())
+                    foreach (var catagory in Enum.GetValues(typeof(LifeAspectEnum)).Cast<LifeAspectEnum>())
                     {
                         var zodiacSignData = new ZodiacSignStream
                         {

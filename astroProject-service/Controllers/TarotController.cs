@@ -23,12 +23,5 @@ namespace astroProject_service.Controllers
             var result = await tarotService.CreateTarotReadingAsync(tarotRequest);
             return Ok(result);
         }
-
-        [HttpGet]
-        public async Task<ActionResult<bool>> CreateTarotCards()
-        {
-            var result = await tarotService.CreateTarotCardsAsync();
-            return Ok(result);
-        }
     }
 }

@@ -15,13 +15,12 @@ namespace astroProject_service.Entities
         [Column(TypeName = "VARCHAR(250)")]
         public string Period { get; set; }
 
-        [Column(TypeName = "VARCHAR(250)")]
+        [Column(TypeName = "VARCHAR(2500)")]
         public string Description { get; set; }
 
         [Column(TypeName = "VARCHAR(250)")]
         public string Catagory { get; set; }
 
-        [Column(TypeName = "VARCHAR(250)")]
         public DateTime Date { get; set; }
     }
 }

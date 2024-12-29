@@ -1,7 +1,6 @@
 using Azure.Core;
 using astroProject_service.Entities;
 using astroProject_service.Models.RequestModels;
-using astroProject_service.Utils.Enums;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System.Reflection;
@@ -34,6 +33,16 @@ namespace astroProject_service.Services
         public async Task<List<ZodiacEntity>> GetZodiacs()
         {
             return await appDbContext.Zodiac.ToListAsync();
+        }
+
+        public async Task<List<LifeAspectEntity>> GetLifeAspects()
+        {
+            return await appDbContext.LifeAspect.ToListAsync();
+        }
+        
+        public async Task<List<TarotCardEntity>> GetTarotCards()
+        {
+            return await appDbContext.TarotCard.ToListAsync();
         }
     }
 }

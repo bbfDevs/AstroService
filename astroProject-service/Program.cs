@@ -1,6 +1,5 @@
 using astroProject_service.Entities;
 using astroProject_service.Services;
-using astroProject_service.Services.SingleRunServices;
 using iks_endeks_service.Services;
 using Microsoft.EntityFrameworkCore;
 using System.ComponentModel;
@@ -21,7 +20,6 @@ builder.Services.AddScoped<TextGeneratorService>();
 builder.Services.AddScoped<ZodiacService>();
 builder.Services.AddScoped<EnumService>();
 builder.Services.AddHostedService<ZodiacStreamService>();
-builder.Services.AddHostedService<DataGeneratorService>();
 
 
 // Add services to the container.

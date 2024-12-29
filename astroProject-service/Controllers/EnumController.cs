@@ -31,5 +31,16 @@ namespace astroProject_service.Controllers
         {
             return await enumService.GetZodiacs();
         }
+
+        [HttpGet]
+        public async Task<ActionResult<List<LifeAspectEntity>>> GetLifeAspects()
+        {
+            return await enumService.GetLifeAspects();
+        }
+
+        public async Task<ActionResult<List<TarotCardEntity>>> GetTarotCards()
+        {
+            return await enumService.GetTarotCards();
+        }
     }
 }
